@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript 轮播图</title>
+<style>
+  .slideshow-container {
+    position: relative;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+  }
+
+  .slide {
+    display: none;
+  }
+
+  .slide img {
+    width: 100%;
+  }
+</style>
+</head>
+<body>
+
+<div class="slideshow-container">
+  <div class="slide">
+    <img src="https://img0.baidu.com/it/u=391340096,1539459758&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="Slide 1">
+  </div>
+  <div class="slide">
+    <img src="https://img2.baidu.com/it/u=152826234,3033275598&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" alt="Slide 2">
+  </div>
+  <div class="slide">
+    <img src="https://img-baofun.zhhainiao.com/pcwallpaper_ugc/static/4d9871a782a377901b29fe182a032fee.jpg?x-oss-process=image%2fresize%2cm_lfit%2cw_3840%2ch_2160" alt="Slide 3">
+  </div>
+  <div class="slide">
+    <img src="https://img1.baidu.com/it/u=483512883,237087010&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500https://img1.baidu.com/it/u=483512883,237087010&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="Slide 4">
+  </div>
+</div>
+
+<script>
+let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let slides = document.getElementsByClassName("slide");
+  for (let i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 3500); // 切换时间间隔为3.5秒
+}
+</script>
+
+</body>
+</html>
