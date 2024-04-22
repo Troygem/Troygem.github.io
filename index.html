@@ -10,12 +10,14 @@
     max-width: 1000px;
     margin: auto;
     overflow: hidden; /* 添加此行以隐藏滚动条 */
+    height: 380px; /* 设置容器固定高度 */
   }
 
   .slide {
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%; /* 让.slide占满.slideshow-container的高度 */
   }
 
   .slide img {
