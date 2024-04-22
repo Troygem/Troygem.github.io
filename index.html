@@ -13,11 +13,13 @@
   }
 
   .slide {
-    display: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 
   .slide img {
-    width: 700px;
+    max-width: 100%; /* 图片宽度随容器宽度缩放 */
     height: auto; /* 让高度根据宽度自动调整 */
   }
 </style>
