@@ -18,7 +18,7 @@
 
   .slide img {
     width: 100%;
-    height: auto;
+    height: 300px; /* 调整图片的高度，使其成为瘦高的长方形 */
   }
 </style>
 </head>
@@ -43,12 +43,7 @@
 function adjustImageSize() {
   const slides = document.querySelectorAll(".slide img");
   slides.forEach(function(slide) {
-    const slideWidth = slide.offsetWidth;
-    const slideHeight = slide.offsetHeight;
-    const containerWidth = document.querySelector(".slideshow-container").offsetWidth;
-    const ratio = containerWidth / slideWidth;
-    const newHeight = slideHeight * ratio;
-    slide.style.height = newHeight + "px";
+    slide.style.height = "300px"; // 设置固定高度
   });
 }
 
