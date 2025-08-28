@@ -3,36 +3,27 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>自适应轮播图</title>
+<title>JavaScript 轮播图</title>
 <style>
-  /* 轮播图容器 */
   .slideshow-container {
     position: relative;
     max-width: 1000px;
     margin: auto;
     overflow: hidden; /* 隐藏滚动条 */
+    height: 380px; /* 固定高度 */
   }
 
-  /* 每一张幻灯片 */
   .slide {
-    display: none; /* 默认隐藏，由 JS 控制显示 */
+    display: flex;
     justify-content: center;
     align-items: center;
+    height: 100%; /* 占满容器高度 */
   }
 
-  /* 幻灯片图片 */
   .slide img {
-    width: 100%;    /* 宽度占满容器 */
-    height: auto;   /* 高度自适应，保持比例 */
-    object-fit: cover; /* 填充容器并裁剪多余部分 */
-    display: block;
-  }
-
-  /* 可选：手机端最大高度限制 */
-  @media screen and (max-width: 600px) {
-    .slide img {
-      max-height: 300px; /* 手机端图片最大高度 */
-    }
+    width: 100%; /* 图片宽度占满父元素 */
+    height: 380px; /* 固定高度 */
+    object-fit: cover; /* 填充容器并保持比例 */
   }
 </style>
 </head>
@@ -46,34 +37,34 @@
     <img src="https://img2.baidu.com/it/u=152826234,3033275598&fm=253&fmt=auto&app=120&f=JPEG?w=1422&h=800" alt="Slide 2">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/photo-1601654253194-260e0b6984f9?q=80&w=1920&auto=format&fit=crop" alt="Slide 3">
+    <img src="https://images.unsplash.com/photo-1601654253194-260e0b6984f9?q=80&w=1999&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&w=1920&h=900&fit=crop&mask=" alt="Slide 3">
   </div>
   <div class="slide">
     <img src="https://img1.baidu.com/it/u=483512883,237087010&fm=253&fmt=auto&app=138&f=JPEG?w=889&h=500" alt="Slide 4">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2946&auto=format&fit=crop" alt="Slide 5">
+    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?q=80&w=2946&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 5">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/photo-1723510657705-468d40e726ce?q=80&w=1674&auto=format&fit=crop" alt="Slide 6">
+    <img src="https://images.unsplash.com/photo-1723510657705-468d40e726ce?q=80&w=1674&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 6">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=2070&auto=format&fit=crop" alt="Slide 7">
+    <img src="https://images.unsplash.com/photo-1519052537078-e6302a4968d4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 7">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/photo-1667967951672-19627bcb1ee5?q=80&w=2070&auto=format&fit=crop" alt="Slide 8">
+    <img src="https://images.unsplash.com/photo-1667967951672-19627bcb1ee5?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 8">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/photo-1488866022504-f2584929ca5f?q=80&w=2062&auto=format&fit=crop" alt="Slide 9">
+    <img src="https://images.unsplash.com/photo-1488866022504-f2584929ca5f?q=80&w=2062&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 9">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?q=80&w=2076&auto=format&fit=crop" alt="Slide 10">
+    <img src="https://images.unsplash.com/reserve/bOvf94dPRxWu0u3QsPjF_tree.jpg?q=80&w=2076&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 10">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/photo-1682685797208-c741d58c2eff?q=80&w=2070&auto=format&fit=crop" alt="Slide 11">
+    <img src="https://images.unsplash.com/photo-1682685797208-c741d58c2eff?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 11">
   </div>
   <div class="slide">
-    <img src="https://images.unsplash.com/photo-1541890289-b86df5bafd81?q=80&w=2045&auto=format&fit=crop" alt="Slide 12">
+    <img src="https://images.unsplash.com/photo-1541890289-b86df5bafd81?q=80&w=2045&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Slide 12">
   </div>
 </div>
 
@@ -84,12 +75,12 @@ showSlides();
 function showSlides() {
   let slides = document.getElementsByClassName("slide");
   for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none"; // 隐藏所有幻灯片
+    slides[i].style.display = "none";
   }
   slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1} // 循环
-  slides[slideIndex-1].style.display = "flex"; // 显示当前幻灯片
-  setTimeout(showSlides, 4500); // 4.5秒切换一次
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4500); // 切换时间间隔为4.5秒
 }
 </script>
 
